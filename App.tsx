@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Github, Play, FileCode, AlertCircle, Download } from 'lucide-react';
+import { Terminal, Github, FileCode, AlertCircle, Download, Zap } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
@@ -13,36 +13,36 @@ const App: React.FC = () => {
              <span className="bg-[#1f6feb] text-white text-xs px-2 py-1 rounded-full uppercase tracking-wide">Python Edition</span>
           </h1>
           <p className="text-[#8b949e] text-lg">
-            Streamlit application powered by Google Gemini 2.5
+            Streamlit application powered by Gemini 2.5 • Managed with <strong>uv</strong>
           </p>
         </div>
 
         {/* Action Card */}
         <div className="bg-[#161b22] border border-[#30363d] rounded-md p-6 shadow-xl">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <Terminal className="w-6 h-6 text-[#58a6ff]" />
-            Quick Start
+            <Zap className="w-6 h-6 text-[#e3b341]" />
+            Quick Start with uv
           </h2>
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-sm font-semibold text-[#8b949e] mb-2 uppercase tracking-wider">1. Install Dependencies</h3>
+              <h3 className="text-sm font-semibold text-[#8b949e] mb-2 uppercase tracking-wider">1. Sync Environment</h3>
               <div className="bg-[#0d1117] border border-[#30363d] rounded p-4 font-mono text-sm text-[#e6edf3] flex justify-between items-center group">
-                 <code>pip install -r requirements.txt</code>
+                 <code>uv sync</code>
               </div>
             </div>
 
             <div>
               <h3 className="text-sm font-semibold text-[#8b949e] mb-2 uppercase tracking-wider">2. Run Application</h3>
               <div className="bg-[#0d1117] border border-[#30363d] rounded p-4 font-mono text-sm text-[#e6edf3]">
-                 <code>streamlit run app.py</code>
+                 <code>uv run streamlit run app.py</code>
               </div>
             </div>
 
             <div className="bg-[#1f6feb]/10 border border-[#1f6feb]/30 rounded p-4 flex gap-3 items-start">
                <AlertCircle className="w-5 h-5 text-[#58a6ff] mt-0.5 shrink-0" />
                <div className="text-sm text-[#8b949e]">
-                 <strong className="text-[#58a6ff]">Note:</strong> Make sure you have set your <code className="bg-[#30363d] px-1 rounded text-white">API_KEY</code> environment variable before running.
+                 <strong className="text-[#58a6ff]">Note:</strong> Ensure you have <code className="bg-[#30363d] px-1 rounded text-white">uv</code> installed and your <code className="bg-[#30363d] px-1 rounded text-white">API_KEY</code> set in your environment.
                </div>
             </div>
           </div>
@@ -62,14 +62,14 @@ const App: React.FC = () => {
                   <span className="text-[#8b949e] text-xs ml-auto">Main Application</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#8b949e]">📄</span>
-                  <span className="text-[#58a6ff] font-mono">requirements.txt</span>
-                  <span className="text-[#8b949e] text-xs ml-auto">Dependencies</span>
+                  <span className="text-[#8b949e]">⚙️</span>
+                  <span className="text-[#58a6ff] font-mono">pyproject.toml</span>
+                  <span className="text-[#8b949e] text-xs ml-auto">Config</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-[#8b949e]">📄</span>
                   <span className="text-[#58a6ff] font-mono">README.md</span>
-                  <span className="text-[#8b949e] text-xs ml-auto">Documentation</span>
+                  <span className="text-[#8b949e] text-xs ml-auto">Docs</span>
                 </li>
               </ul>
            </div>
@@ -80,7 +80,7 @@ const App: React.FC = () => {
                 Ready for GitHub
              </h3>
              <p className="text-[#8b949e] text-sm mb-4">
-               This project is structured to be pushed directly to GitHub. The code is pure Python and uses standard libraries.
+               This project uses <code>uv</code> for fast, reliable dependency management. Just push to GitHub and anyone with uv can run it instantly.
              </p>
              <button className="w-full bg-[#238636] hover:bg-[#2ea043] text-white font-bold py-2 px-4 rounded transition-colors flex items-center justify-center gap-2">
                <Download className="w-4 h-4" />

@@ -4,11 +4,16 @@ Turn your kids' favorite toys into printable coloring book pages instantly using
 
 ## Setup
 
-1.  **Install Python** (3.9 or higher).
-2.  **Install dependencies**:
+1.  **Install uv** (if not already installed):
     ```bash
-    pip install -r requirements.txt
+    curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
+
+2.  **Sync Dependencies**:
+    ```bash
+    uv sync
+    ```
+
 3.  **Set your API Key**:
     Set the `API_KEY` environment variable with your Google Gemini API key.
     
@@ -18,11 +23,11 @@ Turn your kids' favorite toys into printable coloring book pages instantly using
 ## Run the App
 
 ```bash
-streamlit run app.py
+uv run streamlit run app.py
 ```
 
 ## Features
 
-*   **Pure Python**: Built with Streamlit.
+*   **Managed by uv**: Fast, modern Python package management.
 *   **Robust Image Handling**: Uses Pillow to convert HEIC, AVIF, or Transparent PNGs to standard JPEGs for the API.
 *   **Gemini 2.5 Integration**: Uses the `gemini-2.5-flash-image` model for fast image-to-image transformation.
